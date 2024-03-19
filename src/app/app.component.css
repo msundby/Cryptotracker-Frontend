@@ -1,0 +1,15 @@
+body{
+  margin: none;
+}
+#container{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+#content{
+  background: #f1ebeb;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1.45% 4% 2% 4%;
+}

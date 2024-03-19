@@ -1,0 +1,14 @@
+<h1>Top 50 coins by marketcap</h1>
+<div class="container">
+
+<ul>
+  @for(coin of data; track coin.id){
+      <li class="coin">
+        <img [src]="coin.iconUrl" width="50" height="50">
+        <h3><p [style.color]="coin.color"> {{ coin.name }}</p></h3>
+        <h3 [style.color]="coin.color">({{ coin.symbol }})</h3>
+      </li>
+      <hr>
+  }
+</ul>
+</div>

@@ -1,0 +1,14 @@
+<h1>Top 50 coins by marketcap From Spring</h1>
+<div class="container">
+
+<ul>
+  @for(coin of coins; track coin.id){
+      <li class="coin">
+        <img [src]="coin.iconUrl" width="50" height="50">
+        <h3><p [style.color]="coin.color"> {{ coin.symbol }}</p></h3>
+        <h3 [style.color]="coin.color">({{ coin.price }})</h3>
+      </li>
+      <hr>
+  }
+</ul>
+</div>

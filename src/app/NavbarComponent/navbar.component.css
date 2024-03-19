@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  width: 100%;
+  height: 100vh;
+  background: #e2e9fe;
+}
+
+.side-nav {
+  width: 250px;
+  height: 100%;
+  background: #378cf3;
+  top: 0;
+  left: 0;
+  padding: 20px 30px;
+  font-size:120%;
+
+}
+
+.logos{
+  display: flex;
+  justify-content: center;
+}
+
+.logo-img{
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-left: 1%;
+}
+
+.link-icon{
+  width: auto;
+  margin-right: 10%;
+}
+
+.nav-links{
+  list-style:none;
+  position: relative;
+}
+
+.nav-links li{
+  padding: 10px 0;
+}
+
+.nav-links a{
+  color: #fff;
+  text-decoration: none;
+  display:flex;
+  align-items: center;
+  padding: 2vh 4vh;
+}
+
+.active{
+  background: #ce0c0c;
+  width: 100%;
+  height: 47px;
+  position:absolute;
+  left: 0;
+  top: 2%;
+  z-index: -1;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(255,25,blue,alpha);
+  display:none;
+  transition: top 0.3s;
+}
+
+.nav-links li:hover a{
+  color: #abcbf3;
+  transition: 0.3s;
+
+}
+
+.nav-links li:hover ~ .active{
+  display:block;
+}
+
+.nav-links li:nth-child(1):hover ~ .active{
+  top: 2.2%
+}
+
+.nav-links li:nth-child(2):hover ~ .active{
+  top: 27.1%
+}
+
+.nav-links li:nth-child(3):hover ~ .active{
+  top: 52.1%
+}
+
+.nav-links li:nth-child(4):hover ~ .active{
+  top: 77.3%
+}
+
+.logo-icon{
+  display:none;
+  width: 45px;
+}
+
+@media only screen and (max-width: 600px){
+  .side-nav{
+    width: 110px;
+
+  }
+  .logo-icon{
+    display:block;
+    margin-top:42%;
+    margin-bottom: 70%;
+  }
+
+  .logo-img{
+    display:none;
+  }
+
+  .nav-links li a p{
+    display:none;
+  }
+
+  .nav-links li a link-icon{
+    margin-right: 0;
+  }
+
+  .nav-links li a{
+    justify-content: center;
+  }
+}
