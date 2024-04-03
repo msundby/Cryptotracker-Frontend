@@ -5,6 +5,7 @@ import { faHouseUser } from '@fortawesome/free-solid-svg-icons';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faWrench } from '@fortawesome/free-solid-svg-icons';
+import { faGauge } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -15,7 +16,7 @@ import { faWrench } from '@fortawesome/free-solid-svg-icons';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  faHouseUser = faHouseUser;
+  faGauge = faGauge;
   faChartLine = faChartLine;
   faUser = faUser;
   faWrench = faWrench;

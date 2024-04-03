@@ -1,0 +1,35 @@
+*{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container{
+  margin: 0px;
+  border: solid 3px rgb(179, 178, 178);
+  padding: 0.5% 2%;
+  max-width: 30%;
+  max-height: 38.5%;
+  overflow-y: auto;
+  border-radius: 2%;
+}
+
+.container::-webkit-scrollbar {
+  width: 12px; 
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: rgb(179, 178, 178); 
+  border-radius: 6px; 
+}
+
+ul{
+ list-style-type: none;
+ padding: 0px;
+ margin: 0px;
+}
+
+.coin{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  vertical-align: auto;
+}

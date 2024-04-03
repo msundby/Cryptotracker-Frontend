@@ -3,8 +3,71 @@
   <div id="sidebar">
     <app-navbar />
   </div>
-  <div id="content">
-    <app-data-display />   
-    <app-top50coins />  
+  <div id="content"> 
+    <div id="topcards" class="flex flex row space-x-8">
+    
+      <div class="card w-96 bg-base-100 shadow-xl">
+      <figure class="px-10 pt-10">
+        <img src="./assets/images/bitcoin-btc-logo.svg" alt="Bitcoin" class="rounded-xl" />
+      </figure>
+      <div class="card-body items-center text-center">
+        <h2 class="card-title">Bitcoin real time price</h2>
+        <p>@if(coin){
+          {{coin.symbol}}
+          {{coin.price}}
+        }</p>
+      </div>
+    </div>
+
+    <div class="card w-96 bg-base-100 shadow-xl">
+      <figure class="px-10 pt-10">
+        <img src="./assets/images/bitcoin-btc-logo.svg" alt="Bitcoin" class="rounded-xl" />
+      </figure>
+      <div class="card-body items-center text-center">
+        <h2 class="card-title">Bitcoin real time price</h2>
+        <p>@if(coin){
+          {{coin.symbol}}
+          {{coin.price}}
+        }</p>
+      </div>
+    </div>
+
+    <div class="card w-96 bg-base-100 shadow-xl">
+      <figure class="px-10 pt-10">
+        <img src="./assets/images/bitcoin-btc-logo.svg" alt="Bitcoin" class="rounded-xl" />
+      </figure>
+      <div class="card-body items-center text-center">
+        <h2 class="card-title">Bitcoin real time price</h2>
+        <p>@if(coin){
+          {{coin.symbol}}
+          {{coin.price}}
+        }</p>
+      </div>
+    </div>
+
+    <div class="card w-96 bg-base-100 shadow-xl">
+      <figure class="px-10 pt-10">
+        <img src="./assets/images/bitcoin-btc-logo.svg" alt="Bitcoin" class="rounded-xl" />
+      </figure>
+      <div class="card-body items-center text-center">
+        <h2 class="card-title">Bitcoin real time price</h2>
+        <p>@if(coin){
+          {{coin.symbol}}
+          {{coin.price}}
+        }</p>
+      </div>
+    </div>
+
+  </div>
+    
+    
+    <app-top50coins></app-top50coins> 
+
+    <app-line-chart />
+    
+    
+
+    
+  
   </div>
   </div>
