@@ -3,6 +3,8 @@ import Chart from 'chart.js/auto';
 import { BitcoinService } from './bitcoin.service';
 import { Bitcoin } from './bitcoin';
 import { format } from 'date-fns';
+import { EthereumService } from './ethereum.service';
+import { Ethereum } from './ethereum';
 
 @Component({
   selector: 'app-line-chart',
@@ -15,11 +17,13 @@ export class LineChartComponent implements OnInit {
 
   public chart: any;
   bitcoinPrices: Bitcoin[] = [];
+  ethereumPrices: Ethereum[] = [];
 
-  constructor(private bitcoinService: BitcoinService) {}
+  constructor(private bitcoinService: BitcoinService, private ethereumService: EthereumService) {}
 
   ngOnInit(): void {
     this.fetchBitcoinPrices();
+    this.fetchEthereumPrices();
   }
 
   fetchBitcoinPrices() {
@@ -30,24 +34,45 @@ export class LineChartComponent implements OnInit {
       });
   }
 
+  fetchEthereumPrices() {
+    this.ethereumService.getEthereumPrices()
+      .subscribe(prices => {
+        this.ethereumPrices = prices;
+        this.createChart();
+      });
+  }
+
   createChart() {
     if (this.chart) {
       this.chart.destroy();
     }
 
-    const labels = this.bitcoinPrices.map(bitcoin => format(new Date(bitcoin.createDate),'dd/MM/yyyy'));
-    const prices = this.bitcoinPrices.map(bitcoin => bitcoin.price);
+    const bitcoinLabels = this.bitcoinPrices.map(bitcoin => format(new Date(bitcoin.createDate),'dd/MM'));
+    const bitcoinPrices = this.bitcoinPrices.map(bitcoin => bitcoin.price);
+
+    // const ethereumLabels = this.ethereumPrices.map(ethereum => format(new Date(ethereum.createDate), 'dd/MM'));
+    const ethereumPrices = this.ethereumPrices.map(ethereum => ethereum.price);
 
     this.chart = new Chart("MyChart", {
       type: 'line',
       data: {
-        labels,
+        labels: bitcoinLabels,
         datasets: [
           {
             label: "Bitcoin Price",
-            data: prices,
+            data: bitcoinPrices,
             backgroundColor: 'blue'
-          }
+          },
+          // {
+          //   label: "Ethereum Prices",
+          //   data: ethereumPrices,
+          //   backgroundColor: 'green'
+          // },
+          // {
+          //   label: "Ethereum Price",  // Add a new dataset for Ethereum
+          //   data: ethereumPrices,
+          //   backgroundColor: 'green'  // You can choose a different color
+          // }
         ]
       }
     });

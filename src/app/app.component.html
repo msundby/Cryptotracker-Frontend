@@ -4,66 +4,30 @@
     <app-navbar />
   </div>
   <div id="content"> 
-    <div id="topcards" class="flex flex row space-x-8">
+
+    <app-real-time-cards />
     
-      <div class="card w-96 bg-base-100 shadow-xl">
-      <figure class="px-10 pt-10">
-        <img src="./assets/images/bitcoin-btc-logo.svg" alt="Bitcoin" class="rounded-xl" />
-      </figure>
-      <div class="card-body items-center text-center">
-        <h2 class="card-title">Bitcoin real time price</h2>
-        <p>@if(coin){
-          {{coin.symbol}}
-          {{coin.price}}
-        }</p>
+  <div class="flex space-x-8 h-500">
+
+    <div class="card w-full bg-base-100 shadow-xl">
+      <div class="card-body">
+        <h2 class="card-title mb-6">Top 15 Coins By Marketcap</h2>
+        <div class="card-actions justify-end">
+          <app-top50coins class="w-full"></app-top50coins>
+        </div>
       </div>
     </div>
 
-    <div class="card w-96 bg-base-100 shadow-xl">
-      <figure class="px-10 pt-10">
-        <img src="./assets/images/bitcoin-btc-logo.svg" alt="Bitcoin" class="rounded-xl" />
-      </figure>
-      <div class="card-body items-center text-center">
-        <h2 class="card-title">Bitcoin real time price</h2>
-        <p>@if(coin){
-          {{coin.symbol}}
-          {{coin.price}}
-        }</p>
+    <div class="card w-full bg-base-100 shadow-xl">
+      <div class="card-body">
+        <h2 class="card-title mb-6">Price pr. minute</h2>
+        <app-line-chart class="w-full"></app-line-chart>
+        <div class="card-actions justify-end">
+        </div>
       </div>
     </div>
-
-    <div class="card w-96 bg-base-100 shadow-xl">
-      <figure class="px-10 pt-10">
-        <img src="./assets/images/bitcoin-btc-logo.svg" alt="Bitcoin" class="rounded-xl" />
-      </figure>
-      <div class="card-body items-center text-center">
-        <h2 class="card-title">Bitcoin real time price</h2>
-        <p>@if(coin){
-          {{coin.symbol}}
-          {{coin.price}}
-        }</p>
-      </div>
-    </div>
-
-    <div class="card w-96 bg-base-100 shadow-xl">
-      <figure class="px-10 pt-10">
-        <img src="./assets/images/bitcoin-btc-logo.svg" alt="Bitcoin" class="rounded-xl" />
-      </figure>
-      <div class="card-body items-center text-center">
-        <h2 class="card-title">Bitcoin real time price</h2>
-        <p>@if(coin){
-          {{coin.symbol}}
-          {{coin.price}}
-        }</p>
-      </div>
-    </div>
-
+  
   </div>
-    
-    
-    <app-top50coins></app-top50coins> 
-
-    <app-line-chart />
     
     
 

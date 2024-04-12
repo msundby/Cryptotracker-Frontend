@@ -1,0 +1,51 @@
+<div id="topcards" class="flex space-x-20 mb-5">
+    
+  <div class="card w-full flex bg-base-100 shadow-xl ">
+  <figure class="px-10 pt-10 ">
+    <img src="./assets/images/bitcoin-btc-logo.svg" alt="Bitcoin" class="rounded-sm" />
+  </figure>
+  <div class="card-body items-center text-center">
+    <h2 class="card-title text-base">Bitcoin Price</h2>
+    <p class="text-xl text-ellipsis overflow-hidden whitespace-nowrap m-2">@if(coin){
+      {{coin.bitcoinPrice + ' $'}}
+    }</p>
+  </div>
+</div>
+
+<div class="card w-full flex bg-base-100 shadow-xl">
+  <figure class="px-10 pt-10">
+    <img src="./assets/images/ethereum-eth-logo.png" alt="Bitcoin" class="rounded-sm" />
+  </figure>
+  <div class="card-body items-center text-center">
+    <h2 class="card-title text-base">Ethereum Price</h2>
+    <p class="text-xl text-ellipsis overflow-hidden whitespace-nowrap m-2">@if(coin){
+      {{coin.ethereumPrice + ' $'}}
+    }</p>
+  </div>
+</div>
+
+<div class="card w-full flex bg-base-100 shadow-xl">
+  <figure class="px-10 pt-10">
+    <img src="./assets/images/shiba-inu-shib-logo.png" alt="Bitcoin" class="rounded-sm" />
+  </figure>
+  <div class="card-body items-center text-center">
+    <h2 class="card-title text-base">Shiba Inu Price</h2>
+    <p class="text-xl text-ellipsis overflow-hidden whitespace-nowrap m-2">@if(coin){
+      {{coin.shibaInuPrice + ' $'}}
+    }</p>
+  </div>
+</div>
+
+<div class="card w-full flex bg-base-100 shadow-xl">
+  <figure class="px-10 pt-10">
+    <img src="./assets/images/solana.png" alt="Bitcoin" class="rounded-sm" />
+  </figure>
+  <div class="card-body items-center text-center">
+    <h2 class="card-title text-base">Solana Price</h2>
+    <p class="text-xl text-ellipsis overflow-hidden whitespace-nowrap m-2">@if(coin){
+      {{coin.solanaPrice + ' $'}}
+    }</p>
+  </div>
+</div>
+
+</div>
