@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
-import { BitcoinService } from './bitcoin.service';
-import { Bitcoin } from './bitcoin';
+import { CoinPriceService } from './coinprice.service';
+import { CoinPrice } from './CoinPrice';
 import { format } from 'date-fns';
-import { EthereumService } from './ethereum.service';
-import { Ethereum } from './ethereum';
 
 @Component({
   selector: 'app-line-chart',
@@ -16,28 +14,19 @@ import { Ethereum } from './ethereum';
 export class LineChartComponent implements OnInit {
 
   public chart: any;
-  bitcoinPrices: Bitcoin[] = [];
-  ethereumPrices: Ethereum[] = [];
+  bitcoinPrices: CoinPrice[] = [];
 
-  constructor(private bitcoinService: BitcoinService, private ethereumService: EthereumService) {}
+  constructor(private coinPriceService: CoinPriceService) {}
 
   ngOnInit(): void {
     this.fetchBitcoinPrices();
-    this.fetchEthereumPrices();
+
   }
 
   fetchBitcoinPrices() {
-    this.bitcoinService.getBitcoinPrices()
+    this.coinPriceService.getBitcoinPrices()
       .subscribe(prices => {
         this.bitcoinPrices = prices;
-        this.createChart();
-      });
-  }
-
-  fetchEthereumPrices() {
-    this.ethereumService.getEthereumPrices()
-      .subscribe(prices => {
-        this.ethereumPrices = prices;
         this.createChart();
       });
   }
@@ -47,11 +36,8 @@ export class LineChartComponent implements OnInit {
       this.chart.destroy();
     }
 
-    const bitcoinLabels = this.bitcoinPrices.map(bitcoin => format(new Date(bitcoin.createDate),'dd/MM'));
+    const bitcoinLabels = this.bitcoinPrices.map(bitcoin => format(new Date(bitcoin.createDate),'HH:mm'));
     const bitcoinPrices = this.bitcoinPrices.map(bitcoin => bitcoin.price);
-
-    // const ethereumLabels = this.ethereumPrices.map(ethereum => format(new Date(ethereum.createDate), 'dd/MM'));
-    const ethereumPrices = this.ethereumPrices.map(ethereum => ethereum.price);
 
     this.chart = new Chart("MyChart", {
       type: 'line',
