@@ -20,7 +20,5 @@ export class RealTimeCardsComponent {
       this.coin = JSON.parse(event.data)
     };
   }
-
-  
-
 }
+
